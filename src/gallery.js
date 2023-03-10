@@ -1,9 +1,15 @@
 import React from 'react';
+import Posting from './posting';
 
-function Gallery(){
+export default function Gallery({postings}){
     return (
-      <h1>Gallery</h1>
+        <div className='Gallery'>
+            <ul>
+                {postings.map(post => {
+                    return <Posting key={post.title}{...post}/>
+                })}
+            </ul>
+        </div>
     )
   }
 
-export {Gallery}
